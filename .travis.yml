@@ -11,7 +11,7 @@ node_js:
 
 cache:
   directories:
-  - "$HOME/.npm"
+  - node_modules
 
 before_install:
   - npm i -g npm@lts
