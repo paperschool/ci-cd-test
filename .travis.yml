@@ -8,7 +8,7 @@ cache:
   - "$HOME/.npm"
 
 before_install:
-  - npm i -g npm@stable
+  - npm i -g npm@lts
 
 script:
   - npm run test
