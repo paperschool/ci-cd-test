@@ -26,4 +26,4 @@ script:
   - npm run test
 
 after_success:
-  - sh .travis/deploy_dockerhub.sh
+  - sh ./deploy_dockerhub.sh
