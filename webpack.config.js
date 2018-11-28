@@ -1,15 +1,13 @@
 const path = require("path");
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
 module.exports = {
   target: "web",
-  mode: "development",
+  mode: "production",
   entry: {
     index: "./src/index.js"
   },
   output: {
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "public/"),
     filename: "[name].bundle.js"
   },
   module: {
@@ -50,11 +48,5 @@ module.exports = {
      }]
    }
     ],
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
-  ]
+  }
 };
