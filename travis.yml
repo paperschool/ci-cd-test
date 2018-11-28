@@ -1,0 +1,3 @@
+language: javscript
+script:
+  - npm run test
