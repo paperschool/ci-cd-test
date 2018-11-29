@@ -2,6 +2,8 @@
 
 docker login -u $DOCKER_USER -p $DOCKER_PASS
 
+IMAGE_NAME="ci-cd-test"
+
 if [ "$TRAVIS_BRANCH" = "master" ]; then
     TAG="latest"
 elif [ "$TRAVIS_BRANCH" != "master" ]; then
@@ -11,10 +13,10 @@ else
 fi
 
 echo "Building Docker Image"
-docker build -f Dockerfile -t $TRAVIS_REPO_SLUG .
+docker build -f Dockerfile -t $IMAGE_NAME .
 
 echo "Tagging Docker Image"
-docker tag $TRAVIS_REPO_SLUG $DOCKER_USER/$TRAVIS_REPO_SLUG
+docker tag $IMAGE_NAME $DOCKER_USER/$IMAGE_NAME
 
 echo "Pushing Docker Image"
-docker push $DOCKER_USER/$TRAVIS_REPO_SLUG
+docker push $DOCKER_USER/$IMAGE_NAME
