@@ -1,11 +1,11 @@
 FROM node:8
 
-WORKDIR /usr/src/app
+WORKDIR /home/
 
 COPY package*.json ./
 
-COPY /app .
-COPY /src .
+COPY /app ./app
+COPY /src ./src
 COPY webpack.config.js .
 
 RUN npm install --production
@@ -14,4 +14,4 @@ RUN npm build
 
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
+CMD [ "node", "app/index.js" ]
