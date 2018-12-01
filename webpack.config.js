@@ -1,5 +1,7 @@
 const path = require("path");
 
+// somethign
+
 module.exports = {
   target: "web",
   mode: "production",
